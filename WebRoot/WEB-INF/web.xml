@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <display-name>欢迎界面图片的加载</display-name>
+    <description>欢迎界面图片的加载</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.android.register.WelcomeServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/welcome.action</url-pattern>
+  </servlet-mapping>
+
+</web-app>
