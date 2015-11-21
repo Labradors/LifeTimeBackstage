@@ -7,10 +7,21 @@
     <description>欢迎界面图片的加载</description>
     <servlet-class>org.jiangtao.lifetime.servlet.android.register.WelcomeServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>SendValidate</servlet-name>
+    <display-name>发送验证码</display-name>
+    <description>发送验证码</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.android.register.SendValidate</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>WelcomeServlet</servlet-name>
     <url-pattern>/welcome.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SendValidate</servlet-name>
+    <url-pattern>/sendvalidate.action</url-pattern>
   </servlet-mapping>
 
 </web-app>
