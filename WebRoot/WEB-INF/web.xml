@@ -13,6 +13,20 @@
     <description>发送验证码</description>
     <servlet-class>org.jiangtao.lifetime.servlet.android.register.SendValidate</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>RegisterInformationServlet</servlet-name>
+    <display-name>发送注册基本信息</display-name>
+    <description>发送注册基本信息</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.android.register.RegisterInformationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterHeadImageServlet</servlet-name>
+    <display-name>用户选择头像</display-name>
+    <description>用户选择头像</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.android.register.RegisterHeadImageServlet</servlet-class>
+  </servlet>
+
+
 
 
   <servlet-mapping>
@@ -22,6 +36,14 @@
   <servlet-mapping>
     <servlet-name>SendValidate</servlet-name>
     <url-pattern>/sendvalidate.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterInformationServlet</servlet-name>
+    <url-pattern>/registerinformation.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterHeadImageServlet</servlet-name>
+    <url-pattern>/registerImage.action</url-pattern>
   </servlet-mapping>
 
 </web-app>
