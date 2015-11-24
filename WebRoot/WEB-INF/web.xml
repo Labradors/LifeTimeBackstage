@@ -5,26 +5,33 @@
     <servlet-name>WelcomeServlet</servlet-name>
     <display-name>欢迎界面图片的加载</display-name>
     <description>欢迎界面图片的加载</description>
-    <servlet-class>org.jiangtao.lifetime.servlet.android.register.WelcomeServlet</servlet-class>
+    <servlet-class>org.jiangtao.lifetime.servlet.WelcomeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>SendValidate</servlet-name>
     <display-name>发送验证码</display-name>
     <description>发送验证码</description>
-    <servlet-class>org.jiangtao.lifetime.servlet.android.register.SendValidate</servlet-class>
+    <servlet-class>org.jiangtao.lifetime.servlet.SendValidate</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>RegisterInformationServlet</servlet-name>
     <display-name>发送注册基本信息</display-name>
     <description>发送注册基本信息</description>
-    <servlet-class>org.jiangtao.lifetime.servlet.android.register.RegisterInformationServlet</servlet-class>
+    <servlet-class>org.jiangtao.lifetime.servlet.RegisterInformationServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>RegisterHeadImageServlet</servlet-name>
     <display-name>用户选择头像</display-name>
     <description>用户选择头像</description>
-    <servlet-class>org.jiangtao.lifetime.servlet.android.register.RegisterHeadImageServlet</servlet-class>
+    <servlet-class>org.jiangtao.lifetime.servlet.RegisterHeadImageServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>RegisterUserInformationServlet</servlet-name>
+    <display-name>保存用户信息，并且关闭该界面，跳到下一个界面</display-name>
+    <description>保存用户信息，并且关闭该界面，跳到下一个界面</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.android.register.RegisterUserInformationServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -44,6 +51,10 @@
   <servlet-mapping>
     <servlet-name>RegisterHeadImageServlet</servlet-name>
     <url-pattern>/registerImage.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterUserInformationServlet</servlet-name>
+    <url-pattern>/saveInformation.action</url-pattern>
   </servlet-mapping>
 
 </web-app>
