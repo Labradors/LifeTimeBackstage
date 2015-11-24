@@ -1,4 +1,4 @@
-package org.jiangtao.lifetime.servlet.android.register;
+package org.jiangtao.lifetime.servlet;
 
 import java.io.File;
 import java.io.FileInputStream;

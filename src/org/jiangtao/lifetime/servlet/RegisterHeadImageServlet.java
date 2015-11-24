@@ -1,4 +1,4 @@
-package org.jiangtao.lifetime.servlet.android.register;
+package org.jiangtao.lifetime.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * //返回的验证码校验
+ * registerImage.action
  * 
- * @author mr-jiang /registerinformation.action
+ * @author mr-jiang
  * 
  */
-public class RegisterInformationServlet extends HttpServlet {
+public class RegisterHeadImageServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

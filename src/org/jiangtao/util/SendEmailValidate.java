@@ -1,4 +1,4 @@
-package org.jiangtao.register.validate;
+package org.jiangtao.util;
 
 import java.util.Properties;
 

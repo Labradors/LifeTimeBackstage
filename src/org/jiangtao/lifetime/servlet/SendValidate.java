@@ -1,4 +1,4 @@
-package org.jiangtao.lifetime.servlet.android.register;
+package org.jiangtao.lifetime.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 
-import org.jiangtao.register.validate.SendEmailValidate;
+import org.jiangtao.lifetime.bean.ValidateCodeList;
+import org.jiangtao.util.SendEmailValidate;
 
 /**
  * /sendvalidate.action
@@ -25,13 +26,17 @@ public class SendValidate extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html:charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		ValidateCodeList codeList = ValidateCodeList.getInstance();
 		PrintWriter out = response.getWriter();
-		String userEmail = request.getParameter("mEmail");
+		String userEmail = request.getParameter("email");
 		System.out.println(userEmail);
 		if (userEmail != null) {
 			int random = (int) ((Math.random() * 9 + 1) * 100000);
+			codeList.validateList.add(0, String.valueOf(random));
+			System.out.println(codeList.validateList.get(0));
 			try {
-				SendEmailValidate.sendEmail(userEmail, String.valueOf(random));
+				SendEmailValidate.sendEmail(userEmail,
+						codeList.validateList.get(0));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -39,8 +44,10 @@ public class SendValidate extends HttpServlet {
 			/**
 			 * 1.发送验证码到本地
 			 */
-			JSONObject mEmail = JSONObject.fromObject(random);
-			out.print(mEmail);
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("email", codeList.validateList.get(0));
+			out.print(jsonObject);
+			codeList.validateList.clear();
 		}
 		out.flush();
 		out.close();
@@ -48,7 +55,7 @@ public class SendValidate extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		doGet(request, response);
 	}
 
 }
