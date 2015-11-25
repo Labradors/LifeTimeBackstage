@@ -1,4 +1,4 @@
-package org.jiangtao.lifetime.servlet;
+package org.jiangtao.lifetime.servlet.register;
 
 import java.io.IOException;
 import java.io.PrintWriter;
