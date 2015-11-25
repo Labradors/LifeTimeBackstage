@@ -20,7 +20,7 @@ public class BaseDao {
 	 * @return
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public ArrayList getList(Class cl) {
+	public static ArrayList getList(Class cl) {
 		ArrayList ar = new ArrayList();
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -53,7 +53,7 @@ public class BaseDao {
 	 * @param i
 	 * @return
 	 */
-	public Object getObjectById(Class cl, int i) {
+	public static Object getObjectById(Class cl, int i) {
 		Object object = null;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -89,7 +89,7 @@ public class BaseDao {
 	 * @param value
 	 * @return
 	 */
-	public ArrayList getListBySome(Class cl ,String name,Object value){
+	public static ArrayList getListBySome(Class cl ,String name,Object value){
 		ArrayList ar = new ArrayList();
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -121,7 +121,7 @@ public class BaseDao {
 	 * @param ob
 	 * @return
 	 */
-	public boolean insert(Object ob){
+	public static  boolean insert(Object ob){
 		boolean b = false;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -167,7 +167,7 @@ public class BaseDao {
 	 * @param ob
 	 * @return
 	 */
-	public boolean insert1(Object ob){
+	public static boolean insert1(Object ob){
 		boolean b = false;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -216,7 +216,7 @@ public class BaseDao {
  * @param ob
  * @return
  */
-	public boolean update(Object ob){
+	public static boolean update(Object ob){
 		boolean b = false;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -264,7 +264,7 @@ public class BaseDao {
 	 * @param id
 	 * @return
 	 */
-	public boolean delete(Class cl , int id){
+	public static boolean delete(Class cl , int id){
 		boolean b = false;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
@@ -292,7 +292,7 @@ public class BaseDao {
 	 * @param value
 	 * @return
 	 */
-	public boolean deleteBySome(Class cl , String name,Object value){
+	public static boolean deleteBySome(Class cl , String name,Object value){
 		boolean b = false;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
