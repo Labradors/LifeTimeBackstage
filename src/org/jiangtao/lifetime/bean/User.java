@@ -1,5 +1,6 @@
 package org.jiangtao.lifetime.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * @author mr-jiang
  * 
  */
-public class User {
+public class User implements Serializable {
 	private int user_id;
 	private String user_email;
 	private String user_name;

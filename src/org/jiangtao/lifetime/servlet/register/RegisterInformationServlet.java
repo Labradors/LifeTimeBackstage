@@ -1,10 +1,10 @@
 package org.jiangtao.lifetime.servlet.register;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +24,8 @@ import org.jiangtao.util.BaseDao;
 public class RegisterInformationServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	public static final String imageUrl ="/home/mr-jiang/LifeTime/headImage"
+			+ File.separator  + "c.jpg";
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -40,19 +42,20 @@ public class RegisterInformationServlet extends HttpServlet {
 		String passWord = request.getParameter("passWord");
 		String email = request.getParameter("email");
 		System.out.println(userName+passWord+email);
-		User user = fillUser(userName, passWord, email);
+		User user = fillUser(userName, passWord, email,imageUrl);
+		@SuppressWarnings("unused")
 		BaseDao baseDao = new BaseDao();
 		/**
 		 * 返回插入是否正确
 		 */
-		boolean isTrue =baseDao.insert(user);
+		boolean isTrue =BaseDao.insert(user);
 		System.out.println(isTrue);
 		/**
 		 * 获得其id值
 		 */
 		int user_id = 0;
 		@SuppressWarnings("unchecked")
-		ArrayList<User> idUser = baseDao.getListBySome(User.class, "user_email", email);
+		ArrayList<User> idUser = BaseDao.getListBySome(User.class, "user_email", email);
 		for(User user2:idUser){
 			user_id = user2.getUser_id();
 		}
@@ -71,12 +74,12 @@ public class RegisterInformationServlet extends HttpServlet {
 	 * @param email
 	 * @return
 	 */
-	public static User fillUser(String userName,String passWord,String email){
+	public static User fillUser(String userName,String passWord,String email,String url){
 		User user = new User();
 		user.setUser_name(userName);
 		user.setUser_password(passWord);
 		user.setUser_email(email);
-		user.setUser_headpicture(null);
+		user.setUser_headpicture(url);
 		Date date = new Date(2015-10-10);
 		user.setUser_jointime(date);
 		user.setUser_sex(null);
