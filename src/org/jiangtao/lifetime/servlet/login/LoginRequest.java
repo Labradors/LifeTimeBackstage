@@ -2,6 +2,7 @@ package org.jiangtao.lifetime.servlet.login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -9,16 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import net.sf.json.processors.JsonValueProcessor;
 
 import org.jiangtao.lifetime.bean.User;
 import org.jiangtao.util.BaseDao;
-/**
- * 登陆请求
- * @author mr-jiang
- *
- */
-public class LoginServlet extends HttpServlet {
+import org.jiangtao.util.Config;
+
+public class LoginRequest extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	String userEmail = null;
@@ -32,11 +33,18 @@ public class LoginServlet extends HttpServlet {
 		userEmail = request.getParameter("userEmail");
 		passWord = request.getParameter("passWord");
 		System.out.println(userEmail);
+		System.out.println(passWord);
 		@SuppressWarnings("unchecked")
 		ArrayList<User> users = BaseDao.getListBySome(User.class, "user_email",
 				userEmail);
-		User user = getUser(users);
-		userObject = JSONObject.fromObject(user);
+		User user = new User();
+		user = getUser(users);
+		/**
+		 * date日期配置
+		 */
+		JsonConfig jsonConfig = Config.getConfig();
+		userObject = JSONObject.fromObject(user , jsonConfig);
+		System.out.println(userObject);
 		out.print(userObject);
 		out.flush();
 		out.close();

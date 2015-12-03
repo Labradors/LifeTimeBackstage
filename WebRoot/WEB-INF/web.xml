@@ -26,23 +26,40 @@
     <servlet-class>org.jiangtao.lifetime.servlet.register.RegisterHeadImageServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>RegisterUserInformationServlet</servlet-name>
-    <display-name>保存用户信息，并且关闭该界面，跳到下一个界面</display-name>
-    <description>保存用户信息，并且关闭该界面，跳到下一个界面</description>
-    <servlet-class>org.jiangtao.lifetime.servlet.android.register.RegisterUserInformationServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>LoginServlet</servlet-name>
-    <display-name>登陆</display-name>
-    <description>登陆</description>
-    <servlet-class>org.jiangtao.lifetime.servlet.login.LoginServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>GetUserImageServlet</servlet-name>
     <display-name>获取用户头像</display-name>
     <description>获取用户头像</description>
     <servlet-class>org.jiangtao.lifetime.servlet.login.GetUserImageServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>LoginRequest</servlet-name>
+    <display-name>获取用户头像</display-name>
+    <description>获取用户头像</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.login.LoginRequest</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RetrievePasswordResuest</servlet-name>
+    <display-name>找回密码</display-name>
+    <description>找回密码</description>
+    <servlet-class>org.jiangtao.lifetime.servlet.login.RetrievePasswordResuest</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadImageArticleUrlServlet</servlet-name>
+    <display-name>上传文章信息1</display-name>
+    <description>上传文章信息1</description>
+    <servlet-class>org.jiangtao.lifetime.article.UploadImageArticleUrlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetAllArticle</servlet-name>
+    <display-name>获取所有文章信息</display-name>
+    <description>获取所有文章信息</description>
+    <servlet-class>org.jiangtao.lifetime.article.GetAllArticle</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -67,16 +84,24 @@
     <url-pattern>/registerImage.action</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>RegisterUserInformationServlet</servlet-name>
-    <url-pattern>/saveInformation.action</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/login.action</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
     <servlet-name>GetUserImageServlet</servlet-name>
     <url-pattern>/headImage.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginRequest</servlet-name>
+    <url-pattern>/loginRequest.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RetrievePasswordResuest</servlet-name>
+    <url-pattern>/retrievePassword.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadImageArticleUrlServlet</servlet-name>
+    <url-pattern>/uploadImageArticleUrl.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetAllArticle</servlet-name>
+    <url-pattern>/getAllArticle.action</url-pattern>
   </servlet-mapping>
 
 </web-app>
