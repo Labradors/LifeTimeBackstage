@@ -1,21 +1,17 @@
 package org.jiangtao.lifetime.bean;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
-public class IndexDynamic {
+public class AllDynamicString {
 
-	public IndexDynamic() {
+	public AllDynamicString() {
+		// TODO Auto-generated constructor stub
 	}
-/**
- * select user_name,user_headpicture, article_id,article_user_id,article_content,article_image,article_love_number,
- * article_comment_number from User,Article where user_id = article_user_id;
- */
 	private String user_name;
 	private String user_headpicture;
 	private int article_id;
 	private int article_user_id;
-	private Timestamp article_time;
+	private String article_time;
 	private String article_content;
 	private String article_image;
 	private int article_love_number;
@@ -68,10 +64,10 @@ public class IndexDynamic {
 	public void setArticle_comment_number(int article_comment_number) {
 		this.article_comment_number = article_comment_number;
 	}
-	public Timestamp getArticle_time() {
+	public String getArticle_time() {
 		return article_time;
 	}
-	public void setArticle_time(Timestamp article_time) {
+	public void setArticle_time(String article_time) {
 		this.article_time = article_time;
 	}
 	@Override
@@ -84,4 +80,5 @@ public class IndexDynamic {
 				+ article_love_number + ", article_comment_number="
 				+ article_comment_number + "]";
 	}
+
 }

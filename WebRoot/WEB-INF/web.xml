@@ -55,6 +55,20 @@
     <description>获取所有文章信息</description>
     <servlet-class>org.jiangtao.lifetime.article.GetAllArticle</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ArticleBitmap</servlet-name>
+    <display-name>根据上传的图片地址上传文章的图片</display-name>
+    <description>根据上传的图片地址上传文章的图片</description>
+    <servlet-class>org.jiangtao.lifetime.article.ArticleBitmap</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>obtainOtherUser</servlet-name>
+    <display-name>获取别的用户的信息</display-name>
+    <description>获取别的用户的信息</description>
+    <servlet-class>org.jiangtao.lifetime.user.obtainOtherUser</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -102,6 +116,14 @@
   <servlet-mapping>
     <servlet-name>GetAllArticle</servlet-name>
     <url-pattern>/getAllArticle.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ArticleBitmap</servlet-name>
+    <url-pattern>/getArticleImage.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>obtainOtherUser</servlet-name>
+    <url-pattern>/obtainUserInfo.action</url-pattern>
   </servlet-mapping>
 
 </web-app>

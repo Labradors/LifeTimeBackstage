@@ -20,8 +20,10 @@ public class BaseConnection {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+//			conn = DriverManager.getConnection(
+//					"jdbc:mysql://188.166.253.87:3306/LifeTime", "MrJiang", "1234");
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/LifeTime", "root", "1234");
+					"jdbc:mysql://127.0.0.1:3306/LifeTime", "root", "1234");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
