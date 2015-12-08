@@ -67,6 +67,13 @@
     <description>获取别的用户的信息</description>
     <servlet-class>org.jiangtao.lifetime.user.obtainOtherUser</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AttentionFriend</servlet-name>
+    <display-name>关注用户</display-name>
+    <description>关注用户</description>
+    <servlet-class>org.jiangtao.lifetime.attention.AttentionFriend</servlet-class>
+  </servlet>
+
 
 
 
@@ -124,6 +131,10 @@
   <servlet-mapping>
     <servlet-name>obtainOtherUser</servlet-name>
     <url-pattern>/obtainUserInfo.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AttentionFriend</servlet-name>
+    <url-pattern>/attentionUser.action</url-pattern>
   </servlet-mapping>
 
 </web-app>
