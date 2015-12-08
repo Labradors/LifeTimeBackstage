@@ -14,6 +14,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.jiangtao.daoImpl.AllDynamicDaoImpl;
+import org.jiangtao.lifetime.bean.AllDynamicString;
 import org.jiangtao.lifetime.bean.IndexDynamic;
 /**
  * /getAllArticle.action
@@ -31,14 +32,13 @@ public class GetAllArticle extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		AllDynamicDaoImpl dynamicDaoImpl = AllDynamicDaoImpl.getInstance();
-		ArrayList<IndexDynamic> dynamicsList = new ArrayList<>();
+		ArrayList<AllDynamicString> dynamicsList = new ArrayList<>();
 		try {
 			dynamicsList = dynamicDaoImpl.getAllDynamics();
-			for (IndexDynamic indexDynamic : dynamicsList) {
+			for (AllDynamicString indexDynamic : dynamicsList) {
 				System.out.println(indexDynamic.toString());
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		JSONArray array = JSONArray.fromObject(dynamicsList);

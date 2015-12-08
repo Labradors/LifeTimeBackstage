@@ -36,7 +36,7 @@ public class GetUserImageServlet extends HttpServlet {
 			// 设置响应的MIME类型
 			// 图片响应类型
 			String url = request.getParameter("headImageUri");
-			response.setContentType("image/jpeg");
+			response.setContentType("image/*");
 			System.out.println(url);
 			out = response.getOutputStream();
 			in = new FileInputStream(new File(url));
